@@ -10,12 +10,12 @@
 </header>
 <section class="col-sm-6 col-sm-offset-3">
     <form class="form-horizontal" role="form" action="add.php" method="post">
-        <div class="form-group">
+       <!-- <div class="form-group">
             <label for="inputID" class="col-sm-2 control-label">ID</label>
             <div class="col-sm-10">
                 <input type="number" class="form-control" id="inputID" name="StudentId" placeholder="XXXX">
             </div>
-        </div>
+        </div>  -->
         <div class="form-group">
             <label for="inputName" class="col-sm-2 control-label">Full Name</label>
             <div class="col-sm-10">
@@ -37,12 +37,11 @@
         <div class="form-group">
             <label for="inputGender" class="col-sm-2 control-label">Gender</label>
             <div class="col-sm-10">
-                <select class="form-control" id="inputGender" name="StudentGender">
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                </select>
+                <input type="radio"  id="inputGender" name="StudentGender" checked value="Male"/>Male
+                <input type="radio"  id="inputGender" name="StudentGender" value="Female"/>Female
             </div>
         </div>
+
         <div class="form-group">
             <label for="inputDateOfBirth" class="col-sm-2 control-label">Date of Birth</label>
             <div class="col-sm-10">
@@ -68,27 +67,52 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="inputURL" class="col-sm-2 control-label">URL</label>
+            <label for="inputURL" class="col-sm-2 control-label">Website</label>
             <div class="col-sm-10">
-                <input type="url" class="form-control" id="inputURL" name="StudntURL" placeholder="http://www.xyz.com">
+                <input type="url" class="form-control" id="inputURL" name="StudntURL" placeholder="www.xyz.com">
             </div>
         </div>
-        <div class="form-group">
+       <!-- <div class="form-group">
             <label for="inputEducation" class="col-sm-2 control-label">Education Degree</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="inputEducation" name="StudentDegree" placeholder="Bachelor, Masters etc.">
             </div>
-        </div>
+        </div>  -->
         <div class="form-group">
             <label for="inputDepartment" class="col-sm-2 control-label">Department</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputDepartment" name="StudentDepartment" placeholder="Science, Business, Arts etc.">
+                <select class="form-control" id="inputGender" name="StudentDepartment">
+                    <option value="1">Select Department</option>
+                    <option value="1">CSE</option>
+                    <option value="2">EEE</option>
+                    <option value="2">ICT</option>
+                    <option value="2">Pharmacy</option>
+                </select>
             </div>
         </div>
         <div class="form-group">
-            <label for="inputImage" class="col-sm-2 control-label">Image</label>
+            <label for="inputGender" class="col-sm-2 control-label">Gender</label>
+            <div class="col-sm-10">
+                <input type="radio"  id="inputGender" name="StudentGender" checked value="Male"/>Male
+                <input type="radio"  id="inputGender" name="StudentGender" value="Female"/>Female
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputImage" class="col-sm-2 control-label">Student Image</label>
             <div class="col-sm-10">
                 <input type="file" id="inputImage">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputName" class="col-sm-2 control-label">User Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputName" name="StudentUserName" placeholder="User Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputName" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputName" name="StudentPassword" placeholder="Password">
             </div>
         </div>
         <div class="form-group">
