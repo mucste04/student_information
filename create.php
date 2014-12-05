@@ -9,14 +9,9 @@
     <h1 class="text-center">Student Information Form</h1>
 </header>
 <section class="col-sm-6 col-sm-offset-3">
-    <form class="form-horizontal" role="form" action="add.php" method="post">
-       <!-- <div class="form-group">
-            <label for="inputID" class="col-sm-2 control-label">ID</label>
-            <div class="col-sm-10">
-                <input type="number" class="form-control" id="inputID" name="StudentId" placeholder="XXXX">
-            </div>
-        </div>  -->
-        <div class="form-group">
+    <form class="form-horizontal" role="form" action="student_list.php" method="post" enctype="multipart/form-data>
+       
+          <div class="form-group">
             <label for="inputName" class="col-sm-2 control-label">Full Name</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="inputName" name="StudentName" placeholder="Jone Larry">
@@ -57,19 +52,19 @@
         <div class="form-group">
             <label for="inputMobile" class="col-sm-2 control-label">Mobile Number</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="inputMobile" name="StudentMoblie" placeholder="01XXXXXXXXX">
+                <input type="number" class="form-control" id="inputMobile" name="StudentMobile" placeholder="01XXXXXXXXX">
             </div>
         </div>
         <div class="form-group">
             <label for="inputEmail" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail" name="StudentName" placeholder="user@yourcompany.com">
+                <input type="email" class="form-control" id="inputEmail" name="StudentEmail" placeholder="user@yourcompany.com">
             </div>
         </div>
         <div class="form-group">
             <label for="inputURL" class="col-sm-2 control-label">Website</label>
             <div class="col-sm-10">
-                <input type="url" class="form-control" id="inputURL" name="StudntURL" placeholder="www.xyz.com">
+                <input type="url" class="form-control" id="inputURL" name="StudentUrl" placeholder="www.xyz.com">
             </div>
         </div>
        <!-- <div class="form-group">
@@ -82,25 +77,21 @@
             <label for="inputDepartment" class="col-sm-2 control-label">Department</label>
             <div class="col-sm-10">
                 <select class="form-control" id="inputGender" name="StudentDepartment">
-                    <option value="1">Select Department</option>
-                    <option value="1">CSE</option>
-                    <option value="2">EEE</option>
-                    <option value="2">ICT</option>
-                    <option value="2">Pharmacy</option>
+                    <option>Select Department</option>
+                    <option>CSE</option>
+                    <option>EEE</option>
+                    <option>ICT</option>
+                    <option>Pharmacy</option>
                 </select>
             </div>
         </div>
-        <div class="form-group">
-            <label for="inputGender" class="col-sm-2 control-label">Gender</label>
-            <div class="col-sm-10">
-                <input type="radio"  id="inputGender" name="StudentGender" checked value="Male"/>Male
-                <input type="radio"  id="inputGender" name="StudentGender" value="Female"/>Female
-            </div>
-        </div>
+        
         <div class="form-group">
             <label for="inputImage" class="col-sm-2 control-label">Student Image</label>
             <div class="col-sm-10">
-                <input type="file" id="inputImage">
+                <input type="file" name="StudentImage" id="fileToUpload">
+                
+                
             </div>
         </div>
         <div class="form-group">
