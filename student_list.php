@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start();
 $student_id=count($_SESSION['students']);
 //echo "<pre>";
 //print_r($_SERVER);
@@ -47,7 +46,7 @@ if( strtolower($_SERVER['REQUEST_METHOD']) == 'post' ){
     }
     //session_destroy();
     $student_id = (count($_SESSION['students'])+1);
-    $_SESSION['students'][$student_id] = ['StudentName' => $StudentName,
+    $_SESSION['students'][$student_id] = array('StudentName' => $StudentName,
                                              'StudentFathersName' => $StudentFathersName,
                                              'StudentMothersName' => $StudentMothersName,
                                              'StudentGender' => $StudentGender,
@@ -60,7 +59,7 @@ if( strtolower($_SERVER['REQUEST_METHOD']) == 'post' ){
                                              'StudentDepartment' => $StudentDepartment,
                                              'StudentUserName' => $StudentUserName,
                                              'StudentPassword' => $StudentPassword
-                                             ];
+    );
 
 
 }
@@ -118,22 +117,11 @@ if( strtolower($_SERVER['REQUEST_METHOD']) == 'post' ){
                 
                 <td><a href='edit_student.php?student_id=<?php echo $student_id; ?>' >Edit</a> | <a href='delete_student.php?student_id=<?php echo $student_id; ?>' >Delete</a> | <a href='show_student.php?student_id=<?php echo $student_id; ?>' >Show</a></td>
             </tr>
-        <?php
-            //endfor;
- 
- 
- 
-             
-            }
-        ?>          
+        <?php } ?>
                 </tbody>
-
              </table>
-
             <ul>
                 <li><a href="create.php">Add New Student</a></li>
-                
-
             </ul>
         </div>
     </body>

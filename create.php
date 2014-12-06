@@ -9,9 +9,8 @@
     <h1 class="text-center">Student Information Form</h1>
 </header>
 <section class="col-sm-6 col-sm-offset-3">
-    <form class="form-horizontal" role="form" action="student_list.php" method="post" enctype="multipart/form-data>
-       
-          <div class="form-group">
+    <form class="form-horizontal" role="form" action="student_list.php" method="post" enctype="multipart/form-data">
+        <div class="form-group">
             <label for="inputName" class="col-sm-2 control-label">Full Name</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="inputName" name="StudentName" placeholder="Jone Larry">
@@ -90,8 +89,6 @@
             <label for="inputImage" class="col-sm-2 control-label">Student Image</label>
             <div class="col-sm-10">
                 <input type="file" name="StudentImage" id="fileToUpload">
-                
-                
             </div>
         </div>
         <div class="form-group">
