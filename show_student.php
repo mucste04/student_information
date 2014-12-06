@@ -1,11 +1,7 @@
-<?php
-session_start();
-     
+<?php session_start();
     $student_id=$_GET['student_id'];
     $_SESSION['PON']=$student_id;
 ?>
-
-
 <html>
 <head>
     <title>Student Information System</title>
@@ -74,17 +70,12 @@ session_start();
                 <?php echo $_SESSION['students'][$student_id]['StudentUrl']?>
             </div>
         </div>
-       
         <div class="form-group">
             <label for="inputDepartment" class="col-sm-2 control-label">Department</label>
             <div class="col-sm-10">
-                
                    <?php echo $_SESSION['students'][$student_id]['StudentDepartment']?>
-                    
             </div>
         </div>
-        
-        
         <div class="form-group">
             <label for="inputName" class="col-sm-2 control-label">User Name</label>
             <div class="col-sm-10">
