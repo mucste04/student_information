@@ -1,5 +1,6 @@
-<?php session_start(); $student_id="";
-$student_id=count($_SESSION['students']);
+<?php session_start();
+//$student_id="";
+//$student_id=count($_SESSION['students']);
 //echo "<pre>";
 //print_r($_SERVER);
 //print_r($_SESSION);
