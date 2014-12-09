@@ -1,5 +1,7 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Student Information System</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
@@ -66,12 +68,6 @@
                 <input type="url" class="form-control" id="inputURL" name="StudentUrl" placeholder="www.xyz.com">
             </div>
         </div>
-       <!-- <div class="form-group">
-            <label for="inputEducation" class="col-sm-2 control-label">Education Degree</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputEducation" name="StudentDegree" placeholder="Bachelor, Masters etc.">
-            </div>
-        </div>  -->
         <div class="form-group">
             <label for="inputDepartment" class="col-sm-2 control-label">Department</label>
             <div class="col-sm-10">
@@ -84,11 +80,16 @@
                 </select>
             </div>
         </div>
-        
         <div class="form-group">
             <label for="inputImage" class="col-sm-2 control-label">Student Image</label>
             <div class="col-sm-10">
                 <input type="file" name="StudentImage" id="fileToUpload">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputCV" class="col-sm-2 control-label">Student CV</label>
+            <div class="col-sm-10">
+                <input type="file" name="StudentCV" id="inputCV">
             </div>
         </div>
         <div class="form-group">

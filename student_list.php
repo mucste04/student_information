@@ -7,12 +7,8 @@
 //print_r($_POST);
 //echo "</pre>";
 
-if(isset($_POST["submit"])) {
-    
-}
 //form must be submitted to access this page
 if( strtolower($_SERVER['REQUEST_METHOD']) == 'post' ){
-
     $StudentName = "";
     $StudentFathersName = "";
     $StudentMothersName="";
@@ -25,6 +21,8 @@ if( strtolower($_SERVER['REQUEST_METHOD']) == 'post' ){
     $StudentDepartment=$_POST['StudentDepartment'];
     $StudentUserName=$_POST['StudentUserName'];
     $StudentPassword=$_POST['StudentPassword'];
+    $StudentImage="";
+    $StudentCV="";
 
 
     if(array_key_exists('StudentName', $_POST)){
@@ -37,17 +35,26 @@ if( strtolower($_SERVER['REQUEST_METHOD']) == 'post' ){
     if(array_key_exists('StudentMothersName', $_POST)){
         $StudentMothersName = $_POST['StudentMothersName'];
     }
-
-
-
-
-
+    if(array_key_exists('StudentImage', $_FILES)){
+        $StudentImage=$_FILES["StudentImage"]["name"];
+        $UploadImageDir=$_SERVER["DOCUMENT_ROOT"]."/student_information/image/";
+        if(move_uploaded_file($_FILES["StudentImage"]["tmp_name"], $UploadImageDir.$_FILES["StudentImage"]["name"])){
+            echo "Image Upload Done.";
+        }
+    }
+    if(array_key_exists('StudentCV', $_FILES)){
+        $StudentCV=$_FILES["StudentCV"]["name"];
+        $UploadCVDir=$_SERVER["DOCUMENT_ROOT"]."/student_information/files/";
+        if(move_uploaded_file($_FILES["StudentCV"]["tmp_name"], $UploadCVDir.$_FILES["StudentCV"]["name"])){
+            echo "CV Upload Done.";
+        }
+    }
     if(!array_key_exists('students', $_SESSION )){
         $_SESSION['students'] = array();
     }
     //session_destroy();
     $student_id = (count($_SESSION['students'])+1);
-    $_SESSION['students'][$student_id] = array('StudentName' => $StudentName, 'StudentFathersName' => $StudentFathersName, 'StudentMothersName' => $StudentMothersName, 'StudentGender' => $StudentGender, 'StudentDateOfBirth' => $StudentDateOfBirth, 'StudentAddress' => $StudentAddress, 'StudentMobile' => $StudentMobile, 'StudentEmail' => $StudentEmail, 'StudentUrl' => $StudentUrl, 'StudentDepartment' => $StudentDepartment, 'StudentUserName' => $StudentUserName, 'StudentPassword' => $StudentPassword);
+    $_SESSION['students'][$student_id] = array('StudentName' => $StudentName, 'StudentFathersName' => $StudentFathersName, 'StudentMothersName' => $StudentMothersName, 'StudentGender' => $StudentGender, 'StudentDateOfBirth' => $StudentDateOfBirth, 'StudentAddress' => $StudentAddress, 'StudentMobile' => $StudentMobile, 'StudentEmail' => $StudentEmail, 'StudentUrl' => $StudentUrl, 'StudentDepartment' => $StudentDepartment, 'StudentImage' => $StudentImage, 'StudentCV' => $StudentCV, 'StudentUserName' => $StudentUserName, 'StudentPassword' => $StudentPassword);
 }
 ?>
 <html>
@@ -70,6 +77,8 @@ if( strtolower($_SERVER['REQUEST_METHOD']) == 'post' ){
                         <td>Email</td>
                         <td>Website</td>
                         <td>Department</td>
+                        <td>Image</td>
+                        <td>CV</td>
                         <td>User Name</td>
                         <td>Password</td>
                         <td>Action</td>
@@ -92,6 +101,8 @@ if( strtolower($_SERVER['REQUEST_METHOD']) == 'post' ){
                 <td><?php echo $_SESSION['students'][$student_id]['StudentEmail']; ?></td>
                 <td><?php echo $_SESSION['students'][$student_id]['StudentUrl']; ?></td>
                 <td><?php echo $_SESSION['students'][$student_id]['StudentDepartment']; ?></td>
+                <td><img src="image/<?php echo $_SESSION['students'][$student_id]['StudentImage']; ?>" width="100" /></td>
+                <td><a href="files/<?php echo $_SESSION['students'][$student_id]['StudentCV']; ?>" >Download CV</a></td>
                 <td><?php echo $_SESSION['students'][$student_id]['StudentUserName']; ?></td>
                 <td><?php echo $_SESSION['students'][$student_id]['StudentPassword']; ?></td>
                 
